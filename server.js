@@ -70,7 +70,7 @@ app.post("/api/user/login", (req, res) => {
         const token = jwt.sign(payload, process.env.JWT_SECRET);
 
         // Send token in response
-        res.json({ message: { token } });
+        res.json({ message: "login success", token: token });
     }).catch(msg => {
         res.status(422).json({ "message": msg });
     });
